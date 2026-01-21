@@ -12,11 +12,12 @@ A ogni nodo sono associati:
 - un **costo** \(c(i) > 0\) (tempo, denaro, risorse) sostenuto quando si esegue il test;
 - una **probabilità di successo** \(p(i) in (0,1)\) (tipicamente indipendente tra nodi; il test restituisce esito binario successo/fallimento).
 
-Vincolo di precedenza (DAG):
-- un nodo è **eseguibile** solo quando sono soddisfatte le sue dipendenze (i predecessori nel DAG secondo la tua modellazione; spesso: “tutti i predecessori devono aver avuto successo”, ma la logica esatta dipende dall’istanza).
+Vincolo di precedenza (DAG / ordinamento topologico): 
+-i test devono rispettare le dipendenze del grafo. In particolare, se c’è un arco e → g, allora g non può essere eseguito prima di e.
+Più in generale, un nodo è eseguibile solo dopo che tutti i suoi predecessori sono stati eseguiti: qualsiasi sequenza valida di test corrisponde quindi a un ordinamento topologico del DAG.
 
-Obiettivo (idea generale):
--trovare un sequenziamento dei nodi che minimizzi il costo atteso e rispetti le precedenze.
+Obiettivo:
+- trovare un sequenziamento dei nodi che minimizzi il costo atteso e rispetti i vincoli di precedenza.
 ---
 
 ## Cosa c’è nel repository
