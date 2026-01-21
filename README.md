@@ -6,20 +6,17 @@ Implementazione (Python) di algoritmi **euristici** e **esatti** per un problema
 
 ## Il problema: Sequential Testing su DAG
 
-Consideriamo un **DAG** \(G=(V,E)\). Ogni nodo v rappresenta un **test/azione** che può essere eseguita per ottenere informazione sul sistema (o per “sbloccare” nodi successivi).
+Consideriamo un **DAG** \(G=(V,E)\). Ogni nodo i rappresenta un **attività/test** che deve essere eseguito.
 
 A ogni nodo sono associati:
-- un **costo** \(c(v) > 0\) (tempo, denaro, risorse) sostenuto quando si esegue il test;
-- una **probabilità di successo** \(p(v) in (0,1)\) (tipicamente indipendente tra nodi; il test restituisce esito binario successo/fallimento).
+- un **costo** \(c(i) > 0\) (tempo, denaro, risorse) sostenuto quando si esegue il test;
+- una **probabilità di successo** \(p(i) in (0,1)\) (tipicamente indipendente tra nodi; il test restituisce esito binario successo/fallimento).
 
 Vincolo di precedenza (DAG):
 - un nodo è **eseguibile** solo quando sono soddisfatte le sue dipendenze (i predecessori nel DAG secondo la tua modellazione; spesso: “tutti i predecessori devono aver avuto successo”, ma la logica esatta dipende dall’istanza).
 
 Obiettivo (idea generale):
-- progettare una **policy adattiva** (strategia sequenziale) che, osservando gli esiti dei test già eseguiti, scelga quale test eseguire dopo, con l’obiettivo di **minimizzare il costo atteso totale** fino a quando si determina lo stato di interesse (es. raggiungere/validare un nodo goal, o decidere se il goal è raggiungibile, ecc.).
-
-Questo si inserisce nella famiglia classica dei **sequential testing problems**: si hanno componenti stocastiche con costi di osservazione e si vuole determinare lo “stato del sistema” (una funzione degli esiti dei componenti) minimizzando il costo atteso. :contentReference[oaicite:1]{index=1}
-
+-trovare un sequenziamento dei nodi che minimizzi il costo atteso e rispetti le precedenze.
 ---
 
 ## Cosa c’è nel repository
