@@ -29,7 +29,7 @@ uploaded = st.file_uploader("Carica file JSON", type=["json"])
 # Sidebar: parametri SA
 # -----------------------------
 st.sidebar.header("Simulated Annealing")
-T_start = st.sidebar.slider("T_start", 0.1, 5.0, 1.0)
+T_start = st.sidebar.slider("T_start", 0.1, 100.0, 1.0)
 T_end = st.sidebar.slider("T_end", 1e-4, 0.1, 0.001)
 alpha = st.sidebar.slider("alpha", 0.90, 0.999, 0.98)
 iters_per_T = st.sidebar.slider("iters_per_T", 50, 500, 200)

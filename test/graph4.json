@@ -1,0 +1,51 @@
+{
+  "nodes": [
+    { "id": "A", "p": 0.995, "cost": 3.0 },
+    { "id": "B", "p": 0.992, "cost": 4.0 },
+    { "id": "C", "p": 0.990, "cost": 2.0 },
+    { "id": "D", "p": 0.988, "cost": 5.0 },
+
+    { "id": "E", "p": 0.985, "cost": 2.5 },
+    { "id": "F", "p": 0.987, "cost": 6.0 },
+    { "id": "G", "p": 0.983, "cost": 3.5 },
+    { "id": "H", "p": 0.981, "cost": 4.5 },
+    { "id": "I", "p": 0.979, "cost": 7.0 },
+    { "id": "J", "p": 0.989, "cost": 2.0 },
+
+    { "id": "K", "p": 0.997, "cost": 5.5 },
+    { "id": "L", "p": 0.996, "cost": 3.0 },
+    { "id": "M", "p": 0.994, "cost": 6.5 },
+    { "id": "N", "p": 0.993, "cost": 4.0 },
+    { "id": "O", "p": 0.991, "cost": 2.5 },
+    { "id": "P", "p": 0.999, "cost": 7.5 },
+
+    { "id": "Q", "p": 0.980, "cost": 3.5 },
+    { "id": "R", "p": 0.977, "cost": 5.0 },
+    { "id": "S", "p": 0.975, "cost": 2.0 },
+    { "id": "T", "p": 0.972, "cost": 6.0 }
+  ],
+  "edges": [
+    ["A", "E"], ["A", "F"], ["A", "J"],
+    ["B", "F"], ["B", "G"], ["B", "E"],
+    ["C", "G"], ["C", "H"],
+    ["D", "H"], ["D", "I"],
+
+    ["E", "K"], ["E", "L"],
+    ["F", "L"], ["F", "M"],
+    ["G", "M"], ["G", "N"],
+    ["H", "N"], ["H", "O"],
+    ["I", "O"],
+    ["J", "P"], ["J", "L"],
+
+    ["K", "Q"], ["K", "R"],
+    ["L", "Q"], ["L", "S"],
+    ["M", "R"], ["M", "S"],
+    ["N", "R"], ["N", "T"],
+    ["O", "S"], ["O", "T"],
+    ["P", "Q"], ["P", "T"]
+  ],
+  "meta": {
+    "type": "branching_merging_sparse",
+    "note": "DAG con ramificazioni e ricongiungimenti; non è un cammino, quindi molti ordinamenti topologici possibili. Probabilità alte."
+  }
+}
